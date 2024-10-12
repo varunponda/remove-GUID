@@ -1,2 +1,3 @@
-A simple script to remove GUID from the filename when exporting from notion.
+A Python script to remove GUIDs from filenames in Notion exports. Efficiently handles any level of folder nesting, ensuring clean file paths throughout complex directory structures.
+
 
