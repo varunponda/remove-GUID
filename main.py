@@ -1,16 +1,12 @@
 import re
 import os
-
+# Path of directory_name assumed as, D:\Notion-backup\Export-0a317d39-5bf7-4eeb-b160-57e88d9d743d-Part-1\Export-0a317d39-5bf7-4eeb-b160-57e88d9d743d
 directory_name = input('input the directory path:')
 def remove_guid(path):
     guid_pattern = r' [a-fA-F0-9]{32}$'
-    
-    # Split the path into directory and filename
     directory, filename = os.path.split(path)
     
-    # Check if the path has a filename
     if filename:
-        # It's a file, so we need to handle the extension
         name, ext = os.path.splitext(filename)
         match = re.search(guid_pattern, name)
         if match:
@@ -20,7 +16,6 @@ def remove_guid(path):
             cleaned_filename = filename
         return os.path.join(directory, cleaned_filename)
     else:
-        # It's a directory, so we don't need to worry about extensions
         match = re.search(guid_pattern, directory)
         if match:
             cleaned_directory = directory[:match.start()]
@@ -37,6 +32,6 @@ def guid_removal(directory):
       os.rename(old_path,new_path_name)
       if os.path.isdir(new_path_name) == True:
           guid_removal(new_path_name)
-print("path name changed")
+print("process complete")
 
 guid_removal(directory_name)
