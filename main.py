@@ -1,6 +1,6 @@
 import re
 import os
-# Path of directory_name assumed as, D:\Notion-backup\Export-0a317d39-5bf7-4eeb-b160-57e88d9d743d-Part-1\Export-0a317d39-5bf7-4eeb-b160-57e88d9d743d
+# Path of directory_name assumed as, D:\Notion-backup\Export-Part-1\Export
 directory_name = input('input the directory path:')
 def remove_guid(path):
     guid_pattern = r' [a-fA-F0-9]{32}$'
